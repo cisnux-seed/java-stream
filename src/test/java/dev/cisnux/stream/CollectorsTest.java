@@ -24,7 +24,13 @@ public class CollectorsTest {
         List<String> list = getStream().collect(Collectors.toList());
         System.out.println(list);
         List<String> immutableList = getStream().collect(Collectors.toUnmodifiableList());
+        // it will return the immutable list as well
+        List<String> otherImmutableList = getStream().toList();
         System.out.println(immutableList);
+        System.out.println(otherImmutableList);
+        // immutable
+//        immutableList.add("new data");
+//        otherImmutableList.add("new data");
     }
 
     @Test
